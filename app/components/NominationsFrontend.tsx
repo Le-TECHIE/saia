@@ -25,7 +25,6 @@ type NominationFormState = {
   city: string;
   awardCategory: string;
   nominationDeadline: string;
-  eligibilityConfirmed: string;
   nomineeConsentConfirmed: string;
 
   nominatorFullName: string;
@@ -85,7 +84,6 @@ const initialForm: NominationFormState = {
   city: "",
   awardCategory: "",
   nominationDeadline: defaultDeadline,
-  eligibilityConfirmed: "",
   nomineeConsentConfirmed: "",
 
   nominatorFullName: "",
@@ -240,10 +238,6 @@ export default function NominationsFrontend() {
 
     if (!isAwardCategory(form.awardCategory)) {
       return "Award category is required.";
-    }
-
-    if (form.eligibilityConfirmed !== "Yes") {
-      return "Eligibility must be confirmed as Yes to proceed.";
     }
 
     if (form.nomineeConsentConfirmed !== "Yes") {
@@ -454,36 +448,7 @@ export default function NominationsFrontend() {
           </section>
 
           <section className="panel">
-            <h2>2. Qualifying and Consent</h2>
-            <div className="form-grid">
-              <label>
-                Eligibility confirmed?
-                <select
-                  value={form.eligibilityConfirmed}
-                  onChange={(event) => updateField("eligibilityConfirmed", event.target.value)}
-                >
-                  <option value="">Select</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-              </label>
-
-              <label>
-                Nominee consent confirmed?
-                <select
-                  value={form.nomineeConsentConfirmed}
-                  onChange={(event) => updateField("nomineeConsentConfirmed", event.target.value)}
-                >
-                  <option value="">Select</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-              </label>
-            </div>
-          </section>
-
-          <section className="panel">
-            <h2>3. Nominator Information</h2>
+            <h2>2. Nominator Information</h2>
             <div className="form-grid">
               <label>
                 Nominator full name
@@ -542,7 +507,7 @@ export default function NominationsFrontend() {
           </section>
 
           <section className="panel">
-            <h2>4. Nominee Information</h2>
+            <h2>3. Nominee Information</h2>
             {!awardDefinition && (
               <p className="supporting-text">Select an award category to continue nominee details.</p>
             )}
@@ -666,7 +631,7 @@ export default function NominationsFrontend() {
           </section>
 
           <section className="panel">
-            <h2>5. Award-Specific Questions</h2>
+            <h2>4. Award-Specific Questions</h2>
             {!awardDefinition && <p className="supporting-text">Select an award category first.</p>}
 
             {awardDefinition && (
@@ -821,7 +786,7 @@ export default function NominationsFrontend() {
           </section>
 
           <section className="panel">
-            <h2>6. Referee Contact Details</h2>
+            <h2>5. Referee Contact Details</h2>
             <p className="supporting-text">Immediate family members are not eligible referees.</p>
 
             <div className="form-grid">

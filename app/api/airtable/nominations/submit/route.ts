@@ -39,7 +39,6 @@ type SubmitPayload = {
   city?: string;
   awardCategory?: string;
   nominationDeadline?: string;
-  eligibilityConfirmed?: string;
   nomineeConsentConfirmed?: string;
 
   nominatorFullName?: string;
@@ -164,7 +163,7 @@ export async function POST(request: Request) {
   const city = payload.city?.trim() || "";
   const awardCategory = payload.awardCategory?.trim() || "";
   const nominationDeadline = payload.nominationDeadline?.trim() || "";
-  const eligibilityConfirmed = payload.eligibilityConfirmed?.trim() || "";
+  const eligibilityConfirmed = "Yes";
   const nomineeConsentConfirmed = payload.nomineeConsentConfirmed?.trim() || "";
 
   const nominatorFullName = payload.nominatorFullName?.trim() || "";
@@ -209,13 +208,6 @@ export async function POST(request: Request) {
 
   if (!isAwardCategory(awardCategory)) {
     return NextResponse.json({ ok: false, error: "Unsupported award category." }, { status: 400 });
-  }
-
-  if (eligibilityConfirmed !== "Yes") {
-    return NextResponse.json(
-      { ok: false, error: "Eligibility must be confirmed as Yes to proceed." },
-      { status: 400 },
-    );
   }
 
   if (nomineeConsentConfirmed !== "Yes") {
