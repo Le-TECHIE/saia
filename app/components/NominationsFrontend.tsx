@@ -431,7 +431,7 @@ export default function NominationsFrontend() {
             <h2>1. Qualifying and Consent</h2>
             <p className="supporting-text">
               Both confirmations below are required before proceeding.{" "}
-              <a href="/SAIA-Nomination-Guidelines.docx" target="_blank" rel="noopener noreferrer">
+              <a href="/SAIA-Nomination-Guidelines.pdf" target="_blank" rel="noopener noreferrer" className="eligibility-link">
                 Review eligibility criteria
               </a>
             </p>
