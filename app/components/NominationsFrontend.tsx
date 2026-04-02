@@ -428,7 +428,35 @@ export default function NominationsFrontend() {
       {!finalSubmitted && (
         <>
           <section className="panel">
-            <h2>1. City and Award</h2>
+            <h2>1. Qualifying and Consent</h2>
+            <p className="supporting-text">
+              Both confirmations below are required before proceeding.{" "}
+              <a href="/SAIA-Nomination-Guidelines.docx" target="_blank" rel="noopener noreferrer">
+                Review eligibility criteria
+              </a>
+            </p>
+            <div className="consent-checks">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={form.eligibilityConfirmed}
+                  onChange={(event) => updateField("eligibilityConfirmed", event.target.checked)}
+                />
+                Please confirm you have reviewed the eligibility criteria and that the nominee is eligible to be nominated.
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={form.nomineeConsentConfirmed}
+                  onChange={(event) => updateField("nomineeConsentConfirmed", event.target.checked)}
+                />
+                The nominee has consented to this nomination and the publication of their name, photo, and related information.
+              </label>
+            </div>
+          </section>
+
+          <section className="panel">
+            <h2>2. City and Award</h2>
             <p className="supporting-text">Select city and award category.</p>
             {bootstrapLoading && <p className="supporting-text">Loading Airtable data...</p>}
             {bootstrapError && <p className="error-text">Airtable load failed: {bootstrapError}</p>}
@@ -478,34 +506,6 @@ export default function NominationsFrontend() {
                     </option>
                   ))}
                 </select>
-              </label>
-            </div>
-          </section>
-
-          <section className="panel">
-            <h2>2. Qualifying and Consent</h2>
-            <p className="supporting-text">
-              Both confirmations below are required before proceeding.{" "}
-              <a href="/SAIA-Nomination-Guidelines.docx" target="_blank" rel="noopener noreferrer">
-                Review eligibility criteria
-              </a>
-            </p>
-            <div className="consent-checks">
-              <label>
-                <input
-                  type="checkbox"
-                  checked={form.eligibilityConfirmed}
-                  onChange={(event) => updateField("eligibilityConfirmed", event.target.checked)}
-                />
-                Please confirm you have reviewed the eligibility criteria and that the nominee is eligible to be nominated.
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={form.nomineeConsentConfirmed}
-                  onChange={(event) => updateField("nomineeConsentConfirmed", event.target.checked)}
-                />
-                The nominee has consented to this nomination and the publication of their name, photo, and related information.
               </label>
             </div>
           </section>
