@@ -386,7 +386,21 @@ export default function NominationsFrontend() {
       <div className="hero-bg" />
       <section className="hero-card">
         <p className="kicker">South Asian Inspirational Awards</p>
-        <h1>Nomination Portal</h1>
+        <div className="hero-title-row">
+          <h1>Nomination Portal</h1>
+          <span className="hero-credit" aria-label="created by Le Techie">
+            <span className="hero-credit-prefix">created by</span>
+            <a
+              href="https://letechie.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-credit-link"
+            >
+              <span className="hero-credit-le">Le</span>
+              <span className="hero-credit-techie">TECHIE</span>
+            </a>
+          </span>
+        </div>
         <p>Complete the nomination workflow and assign two non-family referees.</p>
         <div className="hero-notice">
           <p><strong>WE WILL ONLY ACCEPT ONE NOMINATION PER PERSON PER CATEGORY.</strong></p>

@@ -63,6 +63,61 @@ body {
   box-shadow: 0 10px 30px rgba(22, 26, 119, 0.25);
 }
 
+.hero-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-credit {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  color: white;
+  line-height: 1;
+  white-space: nowrap;
+  transform: translateY(-0.6rem);
+}
+
+.hero-credit-prefix {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.9;
+  line-height: 1;
+  margin-right: 0.35rem;
+}
+
+.hero-credit-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 180ms ease;
+}
+
+.hero-credit-link:hover {
+  opacity: 0.85;
+}
+
+.hero-credit-le {
+  font-family: var(--font-parisienne), "Brush Script MT", cursive;
+  font-size: 1.39rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.hero-credit-techie {
+  font-family: var(--font-montserrat), "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
 .hero-card h1 {
   margin: 0;
   font-family: var(--font-cinzel), Georgia, serif;

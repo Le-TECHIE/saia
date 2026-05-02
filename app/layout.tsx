@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Montserrat } from "next/font/google";
+import { Cinzel, Montserrat, Parisienne } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -10,6 +10,12 @@ const montserrat = Montserrat({
 const cinzel = Cinzel({
   variable: "--font-cinzel",
   subsets: ["latin"],
+});
+
+const parisienne = Parisienne({
+  variable: "--font-parisienne",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${cinzel.variable} antialiased`}>
+      <body className={`${montserrat.variable} ${cinzel.variable} ${parisienne.variable} antialiased`}>
         {children}
       </body>
     </html>
